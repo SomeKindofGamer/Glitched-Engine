@@ -1,12 +1,11 @@
-![Glitch Engine logo](https://i.imgur.com/1G9g1p2m.png)
+![Glitch Engine logo](https://i.imgur.com/1G9g1p2h.png)
 
 [![AppVeyor](https://img.shields.io/appveyor/build/SomeKindofGamer/Glitched-Engine?label=windows%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-windows/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Macos?label=macOS%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-macos/branch/master/artifacts)  [![AppVeyor](https://img.shields.io/appveyor/build/KadeDev/Kade-Engine-Linux?label=linux%20build)](https://ci.appveyor.com/project/KadeDev/kade-engine-linux/branch/master/artifacts) [![AppVeyor](https://img.shields.io/appveyor/build/daniel11420/KadeEngineWeb?label=html5&20build)](https://ci.appveyor.com/project/daniel11420/KadeEngineWeb) [![Discord](https://img.shields.io/discord/808039740464300104?label=discord)](https://discord.gg/MG6GQFh52U) [![GitHub issues](https://img.shields.io/github/issues/SomeKindofGamer/Glitched-Engine)](https://github.com/SomeKindofGamer/Glitched-Engine/issues) [![GitHub pull requests](https://img.shields.io/github/issues-pr/SomeKindofGamer/Glitched-Engine)](https://github.com/SomeKindofGamer/Glitched-Engine/pulls) []() []()
 
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/SomeKindofGamer/Glitched-Engine/latest) ![GitHub repo size](https://img.shields.io/github/repo-size/SomeKindofGamer/Glitched-Engine) ![Lines of code](https://img.shields.io/tokei/lines/github/SomeKindofGamer/Glitched-Engine) ![Supported platforms](https://img.shields.io/badge/supported%20platforms-windows%2C%20macOS%2C%20linux%2C%20html5-blue) ![GitHub all releases](https://img.shields.io/github/downloads/SomeKindofGamer/Glitched-Engine/total) ![GitHub](https://img.shields.io/github/license/SomeKindofGamer/Glitched-Engine) ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/SomeKindofGamer/Glitched-Engine?include_prereleases&label=latest%20version) 
 
 # Friday Night Funkin': Glitch Engine
-## Friday Night Funkin': Kade Engine
-### Friday Night Funkin'
+## Friday Night Funkin'
 **Friday Night Funkin'** is a rhythm game originally made for Ludum Dare 47 "Stuck In a Loop".
 
 Links: **[itch.io page](https://ninja-muffin24.itch.io/funkin) ⋅ [Newgrounds](https://www.newgrounds.com/portal/view/770371) ⋅ [source code on GitHub](https://github.com/ninjamuffin99/Funkin)**
