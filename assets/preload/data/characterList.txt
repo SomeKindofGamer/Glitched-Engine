@@ -12,6 +12,9 @@ bf-christmas
 gf-christmas
 monster
 bf-pixel
+bf-pixel-opponent
 senpai
 senpai-angry
 spirit
+tankman
+bf-holding-gf

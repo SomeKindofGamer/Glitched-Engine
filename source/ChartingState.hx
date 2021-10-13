@@ -48,6 +48,7 @@ class ChartingState extends MusicBeatState
 	public var snap:Int = 1;
 
 	var UI_box:FlxUITabMenu;
+	var NewUI_box:FlxUITabMenu;
 
 	/**
 	 * Array of notes showing when each section STARTS in STEPS
@@ -70,8 +71,15 @@ class ChartingState extends MusicBeatState
 
 	var dummyArrow:FlxSprite;
 
+	var cyanUwU:FlxUICheckBox;
+	var cYaN:Bool = false;
+	var isDownscroll:Bool = false;
+
 	var curRenderedNotes:FlxTypedGroup<Note>;
 	var curRenderedSustains:FlxTypedGroup<FlxSprite>;
+	var curDifficulty:Int = 1;
+	var currentDifficulty:String = "";
+	var curSelectedDiff:Int = 0;
 
 	var gridBG:FlxSprite;
 
@@ -313,6 +321,7 @@ class ChartingState extends MusicBeatState
 		var gfVersions:Array<String> = CoolUtil.coolTextFile(Paths.txt('gfVersionList'));
 		var stages:Array<String> = CoolUtil.coolTextFile(Paths.txt('stageList'));
 		var noteStyles:Array<String> = CoolUtil.coolTextFile(Paths.txt('noteStyleList'));
+		var diff:Array<String> = CoolUtil.coolTextFile(Paths.txt('difficultyList'));
 
 		var player1DropDown = new FlxUIDropDownMenu(10, 100, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
 		{
@@ -321,6 +330,22 @@ class ChartingState extends MusicBeatState
 		player1DropDown.selectedLabel = _song.player1;
 
 		var player1Label = new FlxText(10,80,64,'Player 1');
+
+		var difficultyDropDown = new FlxUIDropDownMenu(10, 350, FlxUIDropDownMenu.makeStrIdLabelArray(diff, true), function(diff:String)
+		{
+			switch (currentDifficulty)
+			{
+				case 'easy':
+					curSelectedDiff = 0;
+				case 'normal':
+					curSelectedDiff = 1;
+				case 'hard':
+					curSelectedDiff = 2;
+			}
+		});
+		difficultyDropDown.selectedLabel = currentDifficulty;
+
+		curSelectedDiff = curDifficulty;
 
 		var player2DropDown = new FlxUIDropDownMenu(140, 100, FlxUIDropDownMenu.makeStrIdLabelArray(characters, true), function(character:String)
 		{
@@ -505,6 +530,57 @@ class ChartingState extends MusicBeatState
 		UI_box.add(player1);
 		UI_box.add(player2);*/
 
+	}
+
+	function addEditorUI():Void 
+		{
+		var tab_group_editor = new FlxUI(null, NewUI_box);
+		tab_group_editor.name = 'Editor';
+
+		var restart = new FlxButton(10,250,"Reset Notes", function()
+            {
+                for (ii in 0..._song.notes.length)
+                {
+                    for (i in 0..._song.notes[ii].sectionNotes.length)
+                        {
+                            _song.notes[ii].sectionNotes = [];
+                        }
+                }
+                resetSection(true);
+            });
+
+		cyanUwU = new FlxUICheckBox(10, 50, null, null, "Dark Theme", 100);
+		cyanUwU.checked = false;
+		cyanUwU.callback = function()
+		{
+			cYaN = cyanUwU.checked;
+		};
+
+		var check_mute_inst = new FlxUICheckBox(125, 50, null, null, "Mute Instrumental", 100);
+		check_mute_inst.checked = false;
+		check_mute_inst.callback = function()
+		{
+			var vol:Float = 1;
+
+			if (check_mute_inst.checked)
+				vol = 0;
+
+			FlxG.sound.music.volume = vol;
+		};
+
+		var downscroll = new FlxUICheckBox(10, 100, null, null, "Free Lock Dummy Arrow", 100);
+		downscroll.checked = false;
+		downscroll.callback = function()
+		{
+			isDownscroll = downscroll.checked;
+		};
+
+		tab_group_editor.add(cyanUwU);
+		tab_group_editor.add(check_mute_inst);
+		tab_group_editor.add(downscroll);
+		tab_group_editor.add(restart);
+
+		UI_box.addGroup(tab_group_editor);
 	}
 
 	function loadSong(daSong:String):Void

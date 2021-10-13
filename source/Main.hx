@@ -50,6 +50,8 @@ class Main extends Sprite
 		}
 	}
 
+	public static var webmHandler:WebmHandler;
+
 	private function init(?E:Event):Void
 	{
 		if (hasEventListener(Event.ADDED_TO_STAGE))
@@ -82,9 +84,33 @@ class Main extends Sprite
 
 		addChild(game);
 
+		var ourSource:String = "assets/videos/daWeirdVid/dontDelete.webm";
+
+		#if web
+		var str1:String = "HTML CRAP";
+		var vHandler = new VideoHandler();
+		vHandler.init1();
+		vHandler.video.name = str1;
+		addChild(vHandler.video);
+		vHandler.init2();
+		GlobalVideo.setVid(vHandler);
+		vHandler.source(ourSource);
+		#elseif desktop
+		var str1:String = "WEBM SHIT"; 
+		var webmHandle = new WebmHandler();
+		webmHandle.source(ourSource);
+		webmHandle.makePlayer();
+		webmHandle.webm.name = str1;
+		addChild(webmHandle.webm);
+		GlobalVideo.setWebm(webmHandle);
+		#end
+
 		#if !mobile
 		fpsCounter = new FPS(10, 3, 0xFF00FFFF);
 		addChild(fpsCounter);
+		
+		memoryCounter = new MemoryCounter(10, 3, 0xFF00FFFF);
+		addChild(memoryCounter);
 		toggleFPS(FlxG.save.data.fps);
 
 		#end
@@ -101,11 +127,18 @@ class Main extends Sprite
 	public function changeFPSColor(color:FlxColor)
 	{
 		fpsCounter.textColor = color;
+		memoryCounter.textColor = color;
 	}
 
 	public function setFPSCap(cap:Float)
 	{
 		openfl.Lib.current.stage.frameRate = cap;
+	}
+
+	public static var memoryCounter:MemoryCounter;
+
+	public static function toggleMem(memEnabled:Bool):Void {
+		memoryCounter.visible = memEnabled;
 	}
 
 	public function getFPSCap():Float
@@ -116,5 +149,6 @@ class Main extends Sprite
 	public function getFPS():Float
 	{
 		return fpsCounter.currentFPS;
+		
 	}
 }

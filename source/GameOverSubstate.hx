@@ -23,6 +23,9 @@ class GameOverSubstate extends MusicBeatSubstate
 			case 'bf-pixel':
 				stageSuffix = '-pixel';
 				daBf = 'bf-pixel-dead';
+			case 'bf-holding-gf':
+				stageSuffix = '-warzone';
+				daBf = 'bf-holding-gf-DEAD';
 			default:
 				daBf = 'bf';
 		}
@@ -76,6 +79,17 @@ class GameOverSubstate extends MusicBeatSubstate
 		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
 		{
 			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+		}
+
+		var daStage = PlayState.curStage;
+
+		if (bf.animation.curAnim.name == 'firstDeath' && bf.animation.curAnim.finished)
+		{
+			FlxG.sound.playMusic(Paths.music('gameOver' + stageSuffix));
+			if (daStage == 'warzone' || daStage == 'warzone-stress')
+			{
+				FlxG.sound.play(Paths.sound('jeffGameover-' + FlxG.random.int(1, 25), 'shared'));
+			}
 		}
 
 		if (FlxG.sound.music.playing)

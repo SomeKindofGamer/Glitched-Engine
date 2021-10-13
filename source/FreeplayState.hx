@@ -24,7 +24,7 @@ class FreeplayState extends MusicBeatState
 	var selector:FlxText;
 	var curSelected:Int = 0;
 	var curDifficulty:Int = 1;
-
+	
 	var scoreText:FlxText;
 	var diffText:FlxText;
 	var lerpScore:Int = 0;
@@ -100,12 +100,11 @@ class FreeplayState extends MusicBeatState
 
 		var scoreBG:FlxSprite = new FlxSprite(scoreText.x - 6, 0).makeGraphic(Std.int(FlxG.width * 0.35), 66, 0xFF000000);
 		scoreBG.alpha = 0.6;
-		add(scoreBG);
 
 		diffText = new FlxText(scoreText.x, scoreText.y + 36, 0, "", 24);
 		diffText.font = scoreText.font;
 		add(diffText);
-
+		add(scoreBG);
 		add(scoreText);
 
 		changeSelection();
@@ -157,7 +156,7 @@ class FreeplayState extends MusicBeatState
 			addSong(song, weekNum, songCharacters[num]);
 
 			if (songCharacters.length != 1)
-				num++;
+				num++; 
 		}
 	}
 
@@ -322,6 +321,7 @@ class FreeplayState extends MusicBeatState
 		}
 	}
 }
+
 
 class SongMetadata
 {
