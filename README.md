@@ -35,7 +35,7 @@ Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play
  - **New Input System**
 	 - An improved input system, similar to Quaver or Etterna, with less delays, less dropped inputs and other improvements.
  - **More information during gameplay**
-	 - While you're playing, we show you information about how you're doing, such as your accuracy, combo break count, notes per second, and your grade/rating.
+	 - While you're playing, we show you information about how you're doing, such as your accuracy, miss count, health counter, and your grade/rating.
  - **Customizable keybinds**
 	 - Instead of being forced to use WASD and the arrow keys, you can customize the keybinds to any keys you want!
  - **Replays** (in beta)
@@ -43,6 +43,8 @@ Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play
 	 - Replays just store information about what you're doing, they don't actually record the screen -- so they take up way less space on your disk than videos.
  - **Audio offset**
 	 - If your headphones are delayed, you can set an offset in the options menu to line the game up with the delay and play with synced audio like intended.
+ - **Customizable Gameplay**
+	 - In the settings you can also customize your gameplay! Like move around the Sick/Combo show up, Middlescroll (sorta broke), Downscroll and Crapscroll (Was made for fun and only works in downscroll)
 
 # Credits
 ### Friday Night Funkin'
@@ -50,6 +52,15 @@ Links: **[GameBanana mod page](https://gamebanana.com/gamefiles/16761) ⋅ [play
  - [PhantomArcade3K](https://twitter.com/phantomarcade3k) and [Evilsk8r](https://twitter.com/evilsk8r) - Art
  - [Kawai Sprite](https://twitter.com/kawaisprite) - Music
 
+# Rating
+ - FC (0 Misses)
+ - SDCB (10 - 20 Misses)
+ - Good (20 - 35 Misses)
+ - Ehhh (35 - 50 Misses)
+ - Bad (50 - 75 Misses)
+ - Horrible (Over 75 misses)
+
 This game was made with love to Newgrounds and its community. Extra love to Tom Fulp.
 ### Glitch Engine
-- [Kitsuni](https://twitter.com/FortniteKitsuni) - Maintainer and lead programmer
+- [Kitsune](https://twitter.com/UltimateLeaksX) - Maintainer and lead programmer
+- [Zeph (Discord Friend)] - Coder in some parts 
